@@ -463,7 +463,9 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 px-4 pt-4 md:px-6">
-      <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-white/80 bg-white/80 px-4 py-3 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl md:px-5">
+      <div
+        className={`mx-auto max-w-6xl rounded-[1.75rem] border border-white/70 ${theme.aboutHeaderBg} px-4 py-3 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl md:px-5`}
+      >
         <div className="flex items-center justify-between gap-4">
           <Link href="#home" className="flex min-w-0 items-center gap-3" onClick={closeMenu}>
             <div
@@ -471,16 +473,16 @@ function Header() {
             >
               RS
             </div>
-            <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Android + AI Enthusiast</p>
+            <p className={`text-xs uppercase tracking-[0.2em] ${theme.mutedPanelLabel}`}>Android + AI Enthusiast</p>
           </Link>
 
           <div className="flex items-center gap-3">
-            <nav className="hidden items-center gap-1 rounded-full border border-slate-200/90 bg-slate-50/90 p-1 md:flex">
+            <nav className={`hidden items-center gap-1 rounded-full border ${theme.mutedPanel} p-1 md:flex`}>
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-white hover:text-slate-950"
+                  className={`rounded-full px-4 py-2 text-sm font-medium ${theme.headerActionText} transition hover:bg-white/85 hover:text-slate-950`}
                 >
                   {item.label}
                 </a>
@@ -489,7 +491,7 @@ function Header() {
             <button
               type="button"
               onClick={() => setActiveTheme(nextTheme)}
-              className="hidden rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600 transition hover:border-slate-300 hover:text-slate-900 md:inline-flex"
+              className={`hidden rounded-full border ${theme.mutedPanel} px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] ${theme.headerActionText} transition hover:bg-white/85 hover:text-slate-950 md:inline-flex`}
             >
               Theme: {themeLabels[activeTheme]}
             </button>
@@ -497,7 +499,7 @@ function Header() {
               type="button"
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
-              className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 ${theme.headerActionText} transition hover:border-slate-300 hover:bg-white hover:text-slate-950 md:hidden`}
+              className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl border ${theme.mutedPanel} ${theme.headerActionText} transition hover:bg-white/85 hover:text-slate-950 md:hidden`}
               onClick={() => setOpen((value) => !value)}
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -506,14 +508,14 @@ function Header() {
         </div>
 
         {open && (
-          <div className="mt-4 border-t border-slate-200 pt-4 md:hidden">
+          <div className="mt-4 border-t border-white/60 pt-4 md:hidden">
             <nav className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={closeMenu}
-                  className={`rounded-2xl border border-transparent bg-slate-50 px-4 py-3 text-sm font-medium ${theme.headerActionText} transition hover:border-slate-200 hover:bg-white`}
+                  className={`rounded-2xl border ${theme.mutedPanel} px-4 py-3 text-sm font-medium ${theme.headerActionText} transition hover:bg-white/85`}
                 >
                   {item.label}
                 </a>
@@ -524,7 +526,7 @@ function Header() {
                   setActiveTheme(nextTheme);
                   closeMenu();
                 }}
-                className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-medium text-slate-700"
+                className={`rounded-2xl border ${theme.mutedPanel} px-4 py-3 text-left text-sm font-medium ${theme.headerActionText} transition hover:bg-white/85`}
               >
                 Theme: {themeLabels[activeTheme]}
               </button>
@@ -598,13 +600,16 @@ function Hero() {
           </div>
 
           <div className="mt-7 flex flex-wrap gap-3">
-            <Button asChild className="rounded-full px-6">
+            <Button
+              asChild
+              className={`rounded-full border-0 px-6 shadow-sm ${theme.primaryTone} hover:brightness-110`}
+            >
               <a href="#contact">Let&apos;s Talk</a>
             </Button>
             <Button
               asChild
               variant="outline"
-              className="rounded-full border-slate-300 bg-white/80 px-6 text-slate-900 hover:bg-white"
+              className={`rounded-full border ${theme.mutedPanel} bg-white/80 px-6 ${theme.headerActionText} hover:bg-white hover:text-slate-950`}
             >
               <a
                 href="/ranganathan-android-resume-2026.pdf"
@@ -829,19 +834,14 @@ function AboutSection() {
               aria-hidden="true"
               className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${theme.projectAccents[0]} opacity-[0.1]`}
             />
-            <div className="border-b border-white/10 p-6 md:p-8">
-              <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+            <div className="px-6 pb-4 pt-6 md:px-8 md:pb-5 md:pt-8">
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
                 <div className="max-w-2xl">
-                  <p
-                    className={`text-xs font-semibold uppercase tracking-[0.22em] ${theme.certificationsAccentText}`}
-                  >
-                    Continuous Learning
-                  </p>
-                  <h2 className="mt-3 flex items-center gap-2 text-2xl font-semibold tracking-tight text-white">
+                  <h2 className="flex items-center gap-2 text-2xl font-semibold tracking-tight text-white">
                     <Cpu className="h-4 w-4" />
                     Certifications
                   </h2>
-                  <p className="mt-4 text-sm leading-7 text-slate-300">
+                  <p className="mt-3 text-sm leading-7 text-slate-300">
                     Recent credentials that strengthen Android delivery, engineering quality, and practical AI adoption.
                   </p>
                 </div>
@@ -1299,12 +1299,14 @@ function ContactSection() {
 function Footer() {
   const { theme } = usePortfolioTheme();
   return (
-    <footer className="border-t border-slate-200 bg-slate-950 px-4 py-10 text-slate-300 sm:px-6">
+    <footer className={`border-t border-white/10 ${theme.contactFormPanelBg} px-4 py-10 text-slate-300 sm:px-6`}>
       <div className="mx-auto max-w-6xl">
-        <div className="flex flex-col gap-8 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 md:flex-row md:items-center md:justify-between md:p-8">
+        <div
+          className={`flex flex-col gap-8 rounded-[1.75rem] border border-white/10 bg-white/[0.05] p-6 md:flex-row md:items-center md:justify-between md:p-8`}
+        >
           <div>
             <p className="text-2xl font-semibold tracking-tight text-white md:text-3xl">Ranganathan Samraj</p>
-            <p className="mt-2 text-sm leading-6 text-slate-400">
+            <p className={`mt-2 text-sm leading-6 ${theme.certificationsAccentText}`}>
               Senior Android Mobile Application Developer
             </p>
           </div>
@@ -1322,7 +1324,7 @@ function Footer() {
               href={socialLinks.github}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-4 py-2.5 text-sm text-slate-200 transition hover:border-white/35 hover:bg-white/[0.09] hover:text-white"
+              className={`inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm transition hover:text-white ${theme.footerResumeBtn}`}
             >
               <Github className="h-4 w-4" />
               GitHub
@@ -1331,7 +1333,7 @@ function Footer() {
               href={socialLinks.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-4 py-2.5 text-sm text-slate-200 transition hover:border-white/35 hover:bg-white/[0.09] hover:text-white"
+              className={`inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm transition hover:text-white ${theme.footerResumeBtn}`}
             >
               <Linkedin className="h-4 w-4" />
               LinkedIn
@@ -1339,7 +1341,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-6 flex justify-center text-center text-sm text-slate-500">
+        <div className={`mt-6 flex justify-center text-center text-sm ${theme.certificationsAccentText}`}>
           <p>Copyright &copy; 2026 Ranganathan Samraj. All rights reserved.</p>
         </div>
       </div>
