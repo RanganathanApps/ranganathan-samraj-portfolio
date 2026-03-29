@@ -6,6 +6,7 @@ import type { ChangeEvent, FormEvent } from "react";
 import { createContext, useContext, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
+  ArrowUpRight,
   Briefcase,
   Code2,
   Cpu,
@@ -23,9 +24,10 @@ import {
 import { Button } from "../../components/ui/button";
 
 const roles = [
-  "Senior Android developer building high-performance mobile applications.",
   "Kotlin and Jetpack Compose specialist with modern Android architecture expertise.",
+  "Design and deliver reliable Android products with clean architecture, strong quality standards, and practical AI-assisted workflows that speed up delivery",
   "Engineering lead focused on scalable delivery, mentoring, and practical AI adoption.",
+  "Senior Android engineering for products where reliability really matters.",
 ];
 
 const skills = [
@@ -69,23 +71,16 @@ const skillGroups = [
 const aiHighlights = [
   {
     title: "Android Development",
-    description: "Certified grounding in Android development practices and implementation fundamentals.",
+    description: "Core Android credential that reinforces hands-on delivery experience across production mobile applications.",
   },
   {
     title: "GenAI Academy: Yellow Belt Level 2 for Engineers",
-    description: "Applied AI learning focused on practical engineering workflows.",
-  },
-  {
-    title: "Prompt Engineering: Ethical Hacking & Generative AI Fusion",
-    description: "Exploring prompt design with security-aware thinking and experimentation.",
+    description:
+      "Applied in daily engineering workflows at NTT Data to improve delivery throughput while maintaining code quality standards.",
   },
   {
     title: "Generative AI Foundations: Ethical & Responsible Use of AI in IT",
-    description: "Grounding AI work in responsible usage, governance, and delivery discipline.",
-  },
-  {
-    title: "Leveraging Generative AI for Business",
-    description: "Connecting GenAI capabilities to real business and product outcomes.",
+    description: "Signals responsible, governance-aware AI usage aligned with enterprise delivery expectations.",
   },
 ];
 
@@ -98,8 +93,9 @@ const experience = [
     focus: "Banking and engineering enablement",
     badge: "Current",
     bullets: [
-      "Designing and developing online mobile banking applications with 90 percent code coverage.",
-      "Leveraging AI coding assistance to improve delivery speed while maintaining engineering quality.",
+      "Architecting and delivering a mobile banking platform used in production financial flows, maintaining 90%+ unit test coverage across the codebase.",
+      "Owning end-to-end Android delivery in a compliance-sensitive domain, from architecture decisions through release readiness.",
+      "Integrating AI-assisted coding workflows to reduce development cycle time without compromising code quality.",
     ],
   },
   {
@@ -110,8 +106,9 @@ const experience = [
     focus: "Media and e-learning products",
     badge: "Product delivery",
     bullets: [
-      "Developed e-learning applications for JioTV and mobile platforms with unit testing.",
-      "Maintained reusable code for better accessibility and improved readability across the app.",
+      "Built and shipped Android e-learning experiences for JioTV, serving a large-scale media audience across diverse device profiles.",
+      "Established reusable UI component patterns that improved cross-team consistency and reduced duplication across the app.",
+      "Maintained high unit test coverage using Mockk and JUnit, enabling confident refactoring and faster release cycles.",
     ],
   },
   {
@@ -122,7 +119,8 @@ const experience = [
     focus: "Logistics and cargo systems",
     badge: "Legacy modernization",
     bullets: [
-      "Handled legacy source code while adding features and fixing bugs for cargo booking and tracking services.",
+      "Took ownership of a legacy cargo booking and tracking codebase, stabilizing it, reducing bugs, and extending it with new features without breaking existing behavior.",
+      "Improved maintainability in a technically complex system, enabling faster future iterations.",
     ],
   },
   {
@@ -133,7 +131,7 @@ const experience = [
     focus: "Taxi application delivery",
     badge: "Business apps",
     bullets: [
-      "Developed taxi applications for a business use case with production-oriented Android delivery.",
+      "Delivered a production taxi booking application end-to-end within a short timeline, meeting real-world operational requirements.",
     ],
   },
   {
@@ -144,8 +142,8 @@ const experience = [
     focus: "Socket, commerce, and chat apps",
     badge: "Foundation years",
     bullets: [
-      "Built socket-based, e-commerce, and chat applications with tracking capabilities.",
-      "Integrated Firebase crash reporting and push notifications to improve reliability and engagement.",
+      "Built foundational Android applications across e-commerce, chat, and real-time socket-based communication.",
+      "Integrated Firebase Crashlytics and push notifications, improving app reliability and user engagement from day one.",
     ],
   },
 ];
@@ -155,12 +153,12 @@ const projects = [
     eyebrow: "NTT Data",
     title: "Mobile Banking Platform",
     description:
-      "Designed and developed online mobile banking experiences for quality-sensitive financial flows where reliability, clarity, and engineering discipline were essential.",
-    impact: "Delivering high-trust banking environment.",
+      "Owned end-to-end Android architecture and delivery for a production banking app in a compliance-sensitive environment.",
+    impact: "Demonstrates high-stakes Android delivery in a regulated domain.",
     stack: ["Kotlin", "Jetpack Compose", "MVVM", "Unit Testing"],
     highlights: [
-      "Focused on secure, dependable user journeys in a compliance-minded domain.",
-      "Balanced delivery speed with strong testing and maintainable architecture.",
+      "Built with Kotlin, Jetpack Compose, MVVM, and 90%+ unit test coverage.",
+      "Shows the ability to balance delivery speed, release confidence, and maintainable architecture in enterprise work.",
     ],
     accent:
       "from-slate-950 via-emerald-900 to-green-700",
@@ -169,12 +167,12 @@ const projects = [
     eyebrow: "Persistent Systems",
     title: "E-Learning Platform",
     description:
-      "Built e-learning Android experiences for JioTV and related mobile apps, with an emphasis on usability, unit testing, and reusable implementation patterns.",
-    impact: "Designed & built apps for media and education use cases.",
+      "Owned Android feature delivery and UI architecture for a large-scale media and education product used across diverse devices.",
+    impact: "Shows experience shipping for scale and maintainability.",
     stack: ["Android", "Unit Testing", "Accessibility", "Reusable UI"],
     highlights: [
-      "Supported learning-focused interfaces where navigation and clarity really matter.",
-      "Strengthened maintainability through reusable code and better UI consistency.",
+      "Built with Android, unit testing, accessibility practices, and reusable UI components.",
+      "Demonstrates strong delivery for large user bases with device diversity and long-term maintenance needs.",
     ],
     accent:
       "from-slate-950 via-emerald-900 to-emerald-700",
@@ -183,12 +181,12 @@ const projects = [
     eyebrow: "Shamla Tech",
     title: "Cargo Booking & Tracking",
     description:
-      "Extended and stabilized legacy cargo service applications by improving feature support, fixing issues, and making older codebases easier to work with.",
-    impact: "Improving maintainability in a legacy system.",
+      "Owned feature development and stabilization for a legacy logistics Android application with ongoing production needs.",
+    impact: "Proves effectiveness in inherited codebases, not just greenfield apps.",
     stack: ["Android", "Legacy Code", "Bug Fixing", "Feature Delivery"],
     highlights: [
-      "Worked directly in existing production code rather than starting from a clean slate.",
-      "Added practical improvements to booking and tracking experiences used in real operations.",
+      "Built with Android, legacy codebase management, bug fixing, and incremental feature delivery.",
+      "Shows the ability to improve maintainability and stability while preserving existing system behavior.",
     ],
     accent:
       "from-slate-900 via-emerald-900 to-green-700",
@@ -197,12 +195,12 @@ const projects = [
     eyebrow: "Business Apps",
     title: "Taxi Booking Application",
     description:
-      "Delivered Android taxi app functionality for a business use case, focusing on practical product execution and dependable mobile behavior.",
-    impact: "Designed & Deployed transport solution in a short delivery window.",
+      "Owned full Android app delivery for a business taxi use case within a tight implementation timeline.",
+    impact: "Shows operational delivery discipline under pressure.",
     stack: ["Android", "Business Apps", "UI Delivery", "Product Execution"],
     highlights: [
-      "Built for operational use instead of a purely experimental demo scenario.",
-      "Focused on real-world delivery needs and stable app behavior.",
+      "Built for operational use rather than a demo scenario, with dependable user-facing behavior.",
+      "Demonstrates practical execution against real business requirements and delivery deadlines.",
     ],
     accent:
       "from-slate-950 via-green-900 to-emerald-700",
@@ -211,21 +209,37 @@ const projects = [
     eyebrow: "Foundation Work",
     title: "Commerce, Chat & Realtime Apps",
     description:
-      "Built early-career Android applications spanning e-commerce, chat, tracking, and socket-based communication, while integrating Firebase reporting and notifications.",
-    impact: "Created realtime and customer-facing app patterns.",
+      "Built early-career Android applications spanning e-commerce, chat, tracking, and real-time socket-based communication.",
+    impact: "Demonstrates breadth across realtime, engagement, and commerce app patterns.",
     stack: ["Sockets", "Firebase", "Push Notifications", "E-commerce"],
     highlights: [
-      "Worked across multiple app patterns that demanded realtime behavior and user responsiveness.",
-      "Added crash reporting and notifications to improve reliability and engagement loops.",
+      "Built with sockets, Firebase, push notifications, and customer-facing commerce flows.",
+      "Shows early grounding in realtime behavior, crash monitoring, and user engagement systems.",
     ],
     accent:
       "from-slate-900 via-emerald-900 to-emerald-600",
   },
 ];
 
+const projectActions = [
+  {
+    title: "Explore GitHub",
+    description: "Open-source profile, experiments, and supporting code samples.",
+    href: "https://github.com/RanganathanApps",
+    icon: Github,
+  },
+  {
+    title: "Connect on LinkedIn",
+    description: "Best place for hiring conversations and recruiter outreach.",
+    href: "https://www.linkedin.com/in/ranganathan-samraj-2b221773/",
+    icon: Linkedin,
+  },
+];
+
 const socialLinks = {
   github: "https://github.com/RanganathanApps",
   linkedin: "https://www.linkedin.com/in/ranganathan-samraj-2b221773/",
+  naukri: "https://www.naukri.com/mnjuser/profile",
 };
 
 type ThemeName = "monochrome" | "midnight" | "slightMidnightMono";
@@ -575,8 +589,8 @@ function Hero() {
             </span>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-            I design and deliver reliable Android products with clean architecture, strong quality
-            standards, and practical AI-assisted workflows that speed up delivery.
+            I build production-grade Android applications that scale, with clean architecture,
+            rigorous quality standards, and AI-assisted workflows that keep delivery on track.
           </p>
 
           <div className={`mt-6 overflow-hidden rounded-[1.4rem] border ${theme.heroDrivingPanel} p-4 shadow-sm`}>
@@ -634,18 +648,18 @@ function Hero() {
               <div className={`rounded-[2rem] ${theme.heroProfileGradient} p-5 text-white`}>
                 <div>
                   <p className="mt-3 max-w-xs text-sm leading-6 text-slate-300">
-                    Building reliable mobile products with modern Android architecture and practical AI-assisted workflows.
+                    Leading Android delivery for quality-sensitive products with a steady focus on maintainability, release confidence, and team throughput.
                   </p>
                 </div>
 
                 <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div className="rounded-[1.25rem] border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                    <p className="text-[11px] uppercase tracking-[0.18em] text-slate-300">Focus</p>
-                    <p className="mt-2 text-sm font-medium text-white">System Designs</p>
+                    <p className="text-[11px] uppercase tracking-[0.18em] text-slate-300">Domain</p>
+                    <p className="mt-2 text-sm font-medium text-white">Banking / Media / Logistics</p>
                   </div>
                   <div className="rounded-[1.25rem] border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                     <p className="text-[11px] uppercase tracking-[0.18em] text-slate-300">Experience</p>
-                    <p className="mt-2 text-sm font-medium text-white">10+ years</p>
+                    <p className="mt-2 text-sm font-medium text-white">10+ Years</p>
                   </div>
                 </div>
 
@@ -663,11 +677,11 @@ function Hero() {
                 <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div className="rounded-[1.25rem] border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                     <p className="text-[11px] uppercase tracking-[0.18em] text-slate-300">Specialty</p>
-                    <p className="mt-2 text-sm font-medium text-white">Android + AI</p>
+                    <p className="mt-2 text-sm font-medium text-white">Android + AI Tooling</p>
                   </div>
                   <div className="rounded-[1.25rem] border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                     <p className="text-[11px] uppercase tracking-[0.18em] text-slate-300">Strength</p>
-                    <p className="mt-2 text-sm font-medium text-white">Quality delivery</p>
+                    <p className="mt-2 text-sm font-medium text-white">Architecture &amp; Quality</p>
                   </div>
                 </div>
               </div>
@@ -691,10 +705,10 @@ function AboutSection() {
                 <p className={`mb-3 text-sm font-bold uppercase tracking-[0.25em] ${theme.sectionAccentText}`}>
                   About
                 </p>
-                <h2 className="max-w-3xl text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl md:text-4xl">
-                  A product-minded Android engineer with a delivery-first approach.
-                </h2>
-                <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">
+              <h2 className="max-w-3xl text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl md:text-4xl">
+                  A senior Android engineer focused on dependable delivery, not just feature output.
+              </h2>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">
                   I build scalable, user-centric Android experiences, lead cross-functional delivery,
                   and help teams ship with confidence. My work spans architecture, code quality,
                   mentoring, and practical AI-assisted engineering where it adds real value.
@@ -752,6 +766,15 @@ function AboutSection() {
                   </p>
                   <p className="mt-3 text-base font-semibold text-slate-950">
                     Delivery-focused, quality-minded, and collaborative with cross-functional teams.
+                  </p>
+                </div>
+
+                <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                    Open To
+                  </p>
+                  <p className="mt-3 text-base font-semibold text-slate-950">
+                    Senior Android Engineer roles in product-driven enterprise teams.
                   </p>
                 </div>
 
@@ -842,7 +865,7 @@ function AboutSection() {
                     Certifications
                   </h2>
                   <p className="mt-3 text-sm leading-7 text-slate-300">
-                    Recent credentials that strengthen Android delivery, engineering quality, and practical AI adoption.
+                    Selected credentials that reinforce Android expertise, practical AI usage, and enterprise-ready engineering discipline.
                   </p>
                 </div>
               </div>
@@ -1003,13 +1026,12 @@ function ProjectsSection() {
                 Projects
               </p>
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl md:text-4xl">
-                Product work presented as modern, outcome-focused case studies.
+                Enterprise-ready Android work framed around ownership, delivery, and impact.
               </h2>
               <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 md:text-[15px]">
-                These project highlights reflect real delivery experience across Android products in
-                banking, learning, logistics, mobility, and realtime application workflows. Each
-                card captures the kind of product thinking, engineering quality, and execution I
-                bring into production teams.
+                These case studies highlight how I approach Android delivery across banking,
+                learning, logistics, mobility, and realtime product work, with clear ownership,
+                practical technical choices, and outcomes that matter to large engineering teams.
               </p>
             </div>
 
@@ -1021,6 +1043,15 @@ function ProjectsSection() {
                 <p className="mt-2 text-2xl font-semibold text-slate-950">5</p>
                 <p className="mt-2 text-sm leading-6 text-slate-600">
                   Banking, learning, logistics, mobility, and connected commerce.
+                </p>
+              </div>
+
+              <div className="rounded-[1.5rem] border border-slate-200 bg-white p-4 lg:ml-auto lg:w-[18.5rem]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                  Extra Signal
+                </p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Recruiters can also review public work and professional profile links below.
                 </p>
               </div>
             </div>
@@ -1104,6 +1135,35 @@ function ProjectsSection() {
             </motion.article>
           ))}
         </div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {projectActions.map((action) => (
+            <a
+              key={action.title}
+              href={action.href}
+              target="_blank"
+              rel="noreferrer"
+              className="group rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className={`text-[11px] font-semibold uppercase tracking-[0.22em] ${theme.sectionAccentText}`}>
+                    Next Step
+                  </p>
+                  <h3 className="mt-2 text-lg font-semibold text-slate-950">{action.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">{action.description}</p>
+                </div>
+                <div className={`rounded-full border ${theme.mutedPanel} p-3 ${theme.headerActionText}`}>
+                  <action.icon className="h-5 w-5" />
+                </div>
+              </div>
+              <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-slate-700 transition group-hover:text-slate-950">
+                Open link
+                <ArrowUpRight className="h-4 w-4" />
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -1173,11 +1233,12 @@ function ContactSection() {
             Contact
           </p>
           <h2 className="text-2xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-3xl md:text-4xl">
-            Let&apos;s build something useful together.
+            Open to Senior Android Engineering roles at product-driven enterprises.
           </h2>
           <p className="mt-4 max-w-lg text-base leading-8 text-slate-600">
-            If you&apos;re hiring, collaborating, or exploring a mobile product idea, I&apos;d be
-            happy to connect and talk through it.
+            I&apos;m currently exploring Senior Android Engineer opportunities at large-scale
+            organizations where engineering quality, architecture ownership, and delivery
+            reliability matter. If that sounds like your team, I&apos;d be glad to connect.
           </p>
 
           <div className="mt-8 space-y-4">
@@ -1218,8 +1279,8 @@ function ContactSection() {
           />
           <h3 className="text-2xl font-semibold tracking-tight">Quick message</h3>
           <p className="mt-3 text-sm leading-7 text-slate-300">
-            This form opens the visitor&apos;s email app with your address, subject, and message
-            prefilled so they can send it directly.
+            Share the role, team, or product context and the form will open an email draft with
+            everything prefilled.
           </p>
 
           <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
@@ -1286,9 +1347,6 @@ function ContactSection() {
               Send Message
             </Button>
 
-            <p className="text-xs leading-6 text-slate-400">
-              Best for quick outreach. A backend mail service can be added later for direct website submissions.
-            </p>
           </form>
         </div>
       </div>
@@ -1338,11 +1396,20 @@ function Footer() {
               <Linkedin className="h-4 w-4" />
               LinkedIn
             </a>
+            <a
+              href={socialLinks.naukri}
+              target="_blank"
+              rel="noreferrer"
+              className={`inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm transition hover:text-white ${theme.footerResumeBtn}`}
+            >
+              <Briefcase className="h-4 w-4" />
+              Naukri
+            </a>
           </div>
         </div>
 
         <div className={`mt-6 flex justify-center text-center text-sm ${theme.certificationsAccentText}`}>
-          <p>Copyright &copy; 2026 Ranganathan Samraj. All rights reserved.</p>
+          <p>Copyright &copy; 2026. All rights reserved.</p>
         </div>
       </div>
     </footer>
