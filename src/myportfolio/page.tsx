@@ -257,6 +257,8 @@ const themes = {
     heroTitleGradient: "bg-gradient-to-r from-slate-950 via-slate-800 to-slate-600",
     heroDrivingPanel:
       "border-slate-200 bg-[linear-gradient(135deg,_rgba(226,232,240,0.62),_rgba(241,245,249,0.78),_rgba(255,255,255,0.96))]",
+    heroPrimaryButton:
+      "border-slate-300/70 bg-[linear-gradient(135deg,_#0f172a,_#475569)] text-white shadow-[0_16px_34px_rgba(15,23,42,0.18)] hover:border-slate-400/80 hover:shadow-[0_20px_38px_rgba(15,23,42,0.22)]",
     heroProfileGradient: "bg-[linear-gradient(160deg,_#020617_0%,_#0f172a_45%,_#475569_100%)]",
     certificationsPanelBg: "bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950",
     certificationsGlow:
@@ -302,6 +304,8 @@ const themes = {
     heroTitleGradient: "bg-gradient-to-r from-slate-950 via-indigo-900 to-blue-700",
     heroDrivingPanel:
       "border-indigo-100 bg-[linear-gradient(135deg,_rgba(224,231,255,0.62),_rgba(219,234,254,0.78),_rgba(255,255,255,0.96))]",
+    heroPrimaryButton:
+      "border-indigo-300/70 bg-[linear-gradient(135deg,_#312e81,_#2563eb)] text-white shadow-[0_16px_34px_rgba(49,46,129,0.22)] hover:border-indigo-300/90 hover:shadow-[0_20px_40px_rgba(37,99,235,0.24)]",
     heroProfileGradient: "bg-[linear-gradient(160deg,_#020617_0%,_#0f172a_45%,_#312e81_100%)]",
     certificationsPanelBg: "bg-gradient-to-br from-slate-900 via-indigo-950/85 to-slate-800",
     certificationsGlow:
@@ -347,6 +351,8 @@ const themes = {
     heroTitleGradient: "bg-gradient-to-r from-slate-950 via-slate-800 to-slate-600",
     heroDrivingPanel:
       "border-slate-200 bg-[linear-gradient(135deg,_rgba(226,232,240,0.72),_rgba(241,245,249,0.82),_rgba(255,255,255,0.96))]",
+    heroPrimaryButton:
+      "border-slate-300/70 bg-[linear-gradient(135deg,_#0f172a,_#3f4f67)] text-white shadow-[0_16px_34px_rgba(15,23,42,0.2)] hover:border-slate-400/80 hover:shadow-[0_20px_38px_rgba(15,23,42,0.24)]",
     heroProfileGradient: "bg-[linear-gradient(160deg,_#020617_0%,_#0f172a_45%,_#3f4f67_100%)]",
     certificationsPanelBg: "bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950/85",
     certificationsGlow:
@@ -616,9 +622,12 @@ function Hero() {
           <div className="mt-7 flex flex-wrap gap-3">
             <Button
               asChild
-              className={`rounded-full border-0 px-6 shadow-sm ${theme.primaryTone} hover:brightness-110`}
+              className={`rounded-full border bg-white/10 px-6 backdrop-blur-sm ${theme.heroPrimaryButton} hover:-translate-y-0.5 hover:brightness-105`}
             >
-              <a href="#contact">Let&apos;s Talk</a>
+              <a href="#contact">
+                Let&apos;s Talk
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
             </Button>
             <Button
               asChild
